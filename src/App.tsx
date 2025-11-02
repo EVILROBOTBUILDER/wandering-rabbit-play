@@ -18,6 +18,7 @@ import Announcements from "./pages/Announcements";
 import Governance from "./pages/Governance";
 import EventsAndSurveys from "./pages/EventsAndSurveys";
 import ForSaleOrLease from "./pages/ForSaleOrLease";
+import Gallery from "./pages/Gallery"; // New import
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
           <Route path="/about-mvt" element={<AboutMVT />} />
           <Route path="/about-mvt/location-access" element={<AboutMVT />} /> {/* Sub-route example */}
           <Route path="/about-mvt/amenities" element={<Amenities />} /> {/* Reusing existing Amenities page */}
-          <Route path="/about-mvt/gallery" element={<AboutMVT />} /> {/* Sub-route example */}
+          <Route path="/about-mvt/gallery" element={<Gallery />} /> {/* Routing to new Gallery page */}
 
           <Route path="/residents/login" element={<ResidentsLogin />} />
           <Route path="/residents/documents" element={<ResidentDocuments />} />

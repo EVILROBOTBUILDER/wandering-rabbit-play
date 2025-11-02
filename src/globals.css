@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import Inter and Playfair Display fonts */
+@import '@fontsource/inter';
+@import '@fontsource/playfair-display';
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -96,6 +100,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans; /* Apply Inter as default sans-serif */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif; /* Apply Playfair Display to headings */
   }
 }

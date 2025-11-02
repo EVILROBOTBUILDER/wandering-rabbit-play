@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Search, Filter } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb"; // Import Breadcrumb
 
 const Properties = () => {
   // Mock data for properties
@@ -62,7 +63,8 @@ const Properties = () => {
       <main className="flex-grow">
         <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Residences at MTV Condos</h1>
+            <Breadcrumb className="mb-4 text-blue-100" /> {/* Breadcrumb */}
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Our Residences at MTV Condos</h1>
             <p className="text-blue-100 max-w-2xl">
               Discover the diverse selection of luxury apartments and condos available within our community.
             </p>
@@ -91,7 +93,7 @@ const Properties = () => {
               
               <Card>
                 <CardHeader>
-                  <CardTitle>Sort By</CardTitle>
+                  <CardTitle className="font-serif">Sort By</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">

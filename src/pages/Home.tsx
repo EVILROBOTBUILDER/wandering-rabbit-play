@@ -8,6 +8,7 @@ import AGMModule from "@/components/AGMModule";
 import ResourcesRoadmap from "@/components/ResourcesRoadmap";
 import FeedbackSection from "@/components/FeedbackSection";
 import Footer from "@/components/Footer";
+import PushNotificationTeaser from "@/components/PushNotificationTeaser"; // Import PushNotificationTeaser
 
 const HomePage = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage = () => {
       </main>
       
       <Footer />
+      <PushNotificationTeaser /> {/* Add PushNotificationTeaser */}
     </div>
   );
 };

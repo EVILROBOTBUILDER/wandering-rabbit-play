@@ -4,16 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
-import { Calendar, Clock, Video, Users } from "lucide-react";
+import { Calendar, Clock, Video, Users, LogIn } from "lucide-react"; // Added LogIn icon
 import React, { useState, useEffect } from "react";
 
 const AGMModule = () => {
   const agmText = "This website offers the potential for more interaction between the Board and MVT residents. To help further this directive, the Board encourages all owners to become involved and suggests beginning with attendance at the Annual General Meeting (AGM). The AGM is an excellent opportunity to exercise your constructive influence for the coming year.";
   const quoteHighlight = "exercise your constructive influence";
 
-  // Mock AGM Date (e.g., 30 days from now)
-  const nextAGMDate = new Date();
-  nextAGMDate.setDate(nextAGMDate.getDate() + 30);
+  // Target AGM Date: November 15, 2025
+  const nextAGMDate = new Date("2025-11-15T10:00:00");
   const agmDateString = nextAGMDate.toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' });
 
   const calculateTimeLeft = () => {
@@ -51,11 +50,14 @@ const AGMModule = () => {
     );
   });
 
+  // Mock login state for demonstration
+  const isLoggedIn = false; // Set to true to see the "Your Influence Dashboard" teaser
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 font-sans">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">Engagement & Annual General Meeting</h2>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4 font-serif">Engagement & Annual General Meeting</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             {agmText.split(quoteHighlight).map((part, index) => (
               <React.Fragment key={index}>
@@ -71,7 +73,7 @@ const AGMModule = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <Card className="p-6 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl flex items-center justify-center">
+              <CardTitle className="text-2xl flex items-center justify-center font-serif">
                 <Calendar className="mr-2" /> Next AGM: {agmDateString}
               </CardTitle>
             </CardHeader>
@@ -94,7 +96,7 @@ const AGMModule = () => {
 
           <Card className="p-6 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-2xl flex items-center">
+              <CardTitle className="text-2xl flex items-center font-serif">
                 <Users className="mr-2" /> Get Involved
               </CardTitle>
             </CardHeader>
@@ -103,7 +105,7 @@ const AGMModule = () => {
                 <AccordionItem value="item-1">
                   <AccordionTrigger className="text-lg font-medium">Attend the AGM</AccordionTrigger>
                   <AccordionContent className="text-gray-700">
-                    The Annual General Meeting is your primary opportunity to voice opinions and influence community decisions.
+                    The Annual General Meeting is an excellent opportunity to exercise your constructive influence for the coming year.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="item-2">
@@ -119,6 +121,15 @@ const AGMModule = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+              {isLoggedIn && (
+                <div className="mt-6 text-center">
+                  <Button asChild className="w-full bg-green-600 hover:bg-green-700 text-white">
+                    <Link to="/residents/dashboard">
+                      <LogIn className="mr-2 h-5 w-5" /> Your Influence Dashboard
+                    </Link>
+                  </Button>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>

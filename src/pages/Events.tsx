@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
+import Breadcrumb from "@/components/Breadcrumb"; // Import Breadcrumb
 
 const Events = () => {
   const events = [
@@ -59,7 +60,8 @@ const Events = () => {
       <main className="flex-grow">
         <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Community Events</h1>
+            <Breadcrumb className="mb-4 text-blue-100" /> {/* Breadcrumb */}
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 font-serif">Community Events</h1>
             <p className="text-blue-100 max-w-2xl">
               Join our community for exciting events and activities throughout the year.
             </p>
@@ -68,7 +70,7 @@ const Events = () => {
         
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold mb-4">Upcoming Events</h2>
+            <h2 className="text-2xl font-bold mb-4 font-serif">Upcoming Events</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Mark your calendars for these exciting community events
             </p>
@@ -85,11 +87,11 @@ const Events = () => {
           </div>
           
           <div className="mt-16">
-            <h2 className="text-2xl font-bold mb-6 text-center">Event Calendar</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center font-serif">Event Calendar</h2>
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="flex justify-between items-center mb-6">
                 <Button variant="outline">Previous Month</Button>
-                <h3 className="text-xl font-semibold">June 2023</h3>
+                <h3 className="text-xl font-semibold font-serif">June 2023</h3>
                 <Button variant="outline">Next Month</Button>
               </div>
               

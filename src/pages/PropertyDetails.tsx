@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import PropertyDetails from "@/components/PropertyDetails";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Breadcrumb from "@/components/Breadcrumb"; // Import Breadcrumb
 
 const PropertyDetailsPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -63,7 +64,8 @@ const PropertyDetailsPage = () => {
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8 text-center">
-          <h1 className="text-3xl font-bold mb-4">Residence Not Found</h1>
+          <Breadcrumb className="mb-4" /> {/* Breadcrumb */}
+          <h1 className="text-3xl font-bold mb-4 font-serif">Residence Not Found</h1>
           <p className="text-lg text-gray-600 mb-6">The residence you are looking for does not exist.</p>
           <Button asChild>
             <Link to="/properties">Back to Residences</Link>
@@ -79,6 +81,7 @@ const PropertyDetailsPage = () => {
       <Header />
 
       <main className="flex-grow container mx-auto px-4 py-8">
+        <Breadcrumb className="mb-6" /> {/* Breadcrumb */}
         <Button asChild variant="outline" className="mb-6">
           <Link to="/properties">&lt; Back to Residences</Link>
         </Button>
