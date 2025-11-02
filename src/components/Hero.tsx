@@ -1,8 +1,9 @@
 "use client";
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+// Removed Button and ArrowRight imports as they are no longer used
+// import { Button } from '@/components/ui/button';
+// import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -13,11 +14,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for better text readability */}
       <div className="container mx-auto px-4 relative z-10 animate-fade-in">
         <div className="max-w-4xl text-center md:text-left">
-          {/* Removed h1 and p tags as the image already contains the text */}
-          <Button className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-6 py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out group">
-            Explore Properties
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </Button>
+          {/* Removed h1, p, and Button tags as the image already contains the text and the button is no longer needed */}
         </div>
       </div>
     </div>
