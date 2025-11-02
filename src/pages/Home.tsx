@@ -109,7 +109,7 @@ const HomePage = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Properties</h2>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Residences</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Explore our exclusive selection of luxury apartments and condos, each designed with elegance and functionality in mind.
               </p>
@@ -123,7 +123,7 @@ const HomePage = () => {
             
             <div className="text-center mt-12">
               <Button asChild className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white text-lg px-8 py-4 rounded-lg">
-                <Link to="/properties">View All Properties</Link>
+                <Link to="/properties">View All Residences</Link>
               </Button>
             </div>
           </div>

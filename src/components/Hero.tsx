@@ -20,7 +20,7 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white text-lg px-8 py-6 rounded-lg">
-              <Link to="/properties">View Available Units</Link>
+              <Link to="/properties">Explore Residences</Link>
             </Button>
             <Button variant="outline" asChild className="bg-transparent border-white text-white hover:bg-white hover:text-mtv-blue-700 text-lg px-8 py-6 rounded-lg">
               <Link to="/contact">Schedule a Tour</Link>
