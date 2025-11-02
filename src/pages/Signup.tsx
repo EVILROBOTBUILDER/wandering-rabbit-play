@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -9,8 +9,8 @@ import { Label } from "@/components/ui/label";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumb from "@/components/Breadcrumb";
-import { supabase } from '@/integrations/supabase/client';
 import { showSuccess, showError } from '@/utils/toast';
+import { useAuth } from '@/providers/SessionContextProvider.tsx'; // Fixed: Added .tsx extension
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -19,6 +19,13 @@ const Signup = () => {
   const [lastName, setLastName] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { supabase, session } = useAuth(); // Use useAuth hook
+
+  useEffect(() => {
+    if (session) {
+      navigate('/'); // Redirect if already logged in
+    }
+  }, [session, navigate]);
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,6 +46,8 @@ const Signup = () => {
       showError(error.message);
     } else {
       showSuccess('Registration successful! Please check your email to confirm your account.');
+      // The SessionContextProvider will handle the redirect to '/' if confirmation is instant,
+      // otherwise, we navigate to login to await email confirmation.
       navigate('/residents/login');
     }
     setLoading(false);

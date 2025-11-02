@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -9,14 +9,21 @@ import { Label } from "@/components/ui/label";
 import Breadcrumb from "@/components/Breadcrumb";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { supabase } from '@/integrations/supabase/client';
 import { showSuccess, showError } from '@/utils/toast';
+import { useAuth } from '@/providers/SessionContextProvider.tsx'; // Fixed: Added .tsx extension
 
 const ResidentsLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { supabase, session } = useAuth(); // Use useAuth hook
+
+  useEffect(() => {
+    if (session) {
+      navigate('/'); // Redirect if already logged in
+    }
+  }, [session, navigate]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +38,7 @@ const ResidentsLogin = () => {
       showError(error.message);
     } else {
       showSuccess('Logged in successfully!');
-      navigate('/'); // Redirect to home or dashboard after successful login
+      // The SessionContextProvider will handle the redirect to '/'
     }
     setLoading(false);
   };

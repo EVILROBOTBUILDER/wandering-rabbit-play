@@ -3,19 +3,31 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, LogOut } from "lucide-react"; // Added LogOut icon
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useAuth } from '@/providers/SessionContextProvider.tsx'; // Fixed: Added .tsx extension
+import { showSuccess, showError } from '@/utils/toast'; // Import toast utilities
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { session, supabase } = useAuth(); // Use useAuth hook
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleLogout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      showError(error.message);
+    } else {
+      showSuccess('Logged out successfully!');
+    }
   };
 
   return (
@@ -53,9 +65,20 @@ const Header = () => {
               Residents <ChevronDown className="ml-1 h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem asChild>
-                <Link to="/residents/login">Login</Link>
-              </DropdownMenuItem>
+              {!session ? (
+                <>
+                  <DropdownMenuItem asChild>
+                    <Link to="/residents/login">Login</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/residents/signup">Signup</Link>
+                  </DropdownMenuItem>
+                </>
+              ) : (
+                <DropdownMenuItem onClick={handleLogout}>
+                  <LogOut className="mr-2 h-4 w-4" /> Logout
+                </DropdownMenuItem>
+              )}
               <DropdownMenuItem asChild>
                 <Link to="/residents/documents">Documents</Link>
               </DropdownMenuItem>
@@ -97,7 +120,15 @@ const Header = () => {
         </nav>
         
         <div className="hidden md:block">
-          <Button className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white">Resident Login</Button>
+          {!session ? (
+            <Button asChild className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white">
+              <Link to="/residents/login">Resident Login</Link>
+            </Button>
+          ) : (
+            <Button onClick={handleLogout} className="bg-red-600 hover:bg-red-700 text-white">
+              <LogOut className="mr-2 h-5 w-5" /> Logout
+            </Button>
+          )}
         </div>
         
         {/* Mobile menu button */}
@@ -131,10 +162,18 @@ const Header = () => {
             {/* Residents */}
             <div className="flex flex-col">
               <span className="text-gray-700 py-2 text-lg font-medium">Residents</span>
-              <Link to="/residents/login" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Login</Link>
+              {!session ? (
+                <>
+                  <Link to="/residents/login" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Login</Link>
+                  <Link to="/residents/signup" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Signup</Link>
+                </>
+              ) : (
+                <Button variant="ghost" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1 justify-start" onClick={() => { handleLogout(); toggleMenu(); }}>
+                  <LogOut className="mr-2 h-4 w-4" /> Logout
+                </Button>
+              )}
               <Link to="/residents/documents" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Documents</Link>
-              <Link to="/residents/service-requests" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Service Requests</Link>
-              <Link to="/residents/announcements" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Announcements</Link>
+              <Link to="/residents/service-requests" className="ml-4 text-gray-600 hover:text-mtv-blue-500 transition-colors py-1" onClick={toggleMenu}>Announcements</Link>
             </div>
             {/* Governance */}
             <div className="flex flex-col">
@@ -152,7 +191,11 @@ const Header = () => {
             <Link to="/for-sale-lease" className="text-gray-700 hover:text-mtv-blue-500 transition-colors py-2 text-lg font-medium" onClick={toggleMenu}>
               For Sale / Lease
             </Link>
-            <Button className="w-full mt-2 bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white">Resident Login</Button>
+            {!session && (
+              <Button asChild className="w-full mt-2 bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white">
+                <Link to="/residents/login" onClick={toggleMenu}>Resident Login</Link>
+              </Button>
+            )}
           </div>
         </div>
       )}
