@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Breadcrumb from "@/components/Breadcrumb"; // Import Breadcrumb
@@ -19,6 +19,7 @@ const ResidentsLogin = () => {
           <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-center font-serif">Resident Login</CardTitle>
+              <CardDescription className="text-center">Access your resident portal.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
@@ -31,7 +32,13 @@ const ResidentsLogin = () => {
               </div>
               <Button className="w-full">Login</Button>
               <p className="text-center text-sm text-gray-600">
-                <Link to="#" className="text-blue-600 hover:underline">Forgot Password?</Link>
+                <Link to="#" className="text-mtv-blue-600 hover:underline">Forgot Password?</Link>
+              </p>
+              <p className="text-center text-sm text-gray-600">
+                Don't have an account?{" "}
+                <Link to="/residents/signup" className="text-mtv-blue-600 hover:underline">
+                  Register here
+                </Link>
               </p>
             </CardContent>
           </Card>
