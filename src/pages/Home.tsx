@@ -7,7 +7,7 @@ import FeatureCard from "@/components/FeatureCard";
 import EventCard from "@/components/EventCard";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { 
   Users, 
@@ -17,9 +17,7 @@ import {
   Coffee, 
   Dumbbell,
   Star,
-  MapPin,
-  Phone,
-  Mail
+  Home as HomeIcon // Renamed to avoid conflict with page component
 } from "lucide-react";
 
 const HomePage = () => {
@@ -33,7 +31,7 @@ const HomePage = () => {
       bedrooms: 2,
       bathrooms: 2,
       sqft: 1200,
-      image: "https://placehold.co/400x300?text=Modern+Apartment"
+      image: "https://placehold.co/400x300/e0f2fe/1e306a?text=Modern+Apartment"
     },
     {
       id: 2,
@@ -43,7 +41,7 @@ const HomePage = () => {
       bedrooms: 3,
       bathrooms: 3,
       sqft: 1800,
-      image: "https://placehold.co/400x300?text=Waterfront+Condo"
+      image: "https://placehold.co/400x300/bfdbfe/1e306a?text=Waterfront+Condo"
     },
     {
       id: 3,
@@ -53,7 +51,7 @@ const HomePage = () => {
       bedrooms: 1,
       bathrooms: 1,
       sqft: 800,
-      image: "https://placehold.co/400x300?text=Studio+Loft"
+      image: "https://placehold.co/400x300/93c5fd/1e306a?text=Studio+Loft"
     }
   ];
 
@@ -66,18 +64,18 @@ const HomePage = () => {
     },
     {
       icon: Car,
-      title: "Parking",
-      description: "Secure parking available for residents."
+      title: "Secure Parking",
+      description: "Dedicated and secure parking available for all residents."
     },
     {
       icon: Coffee,
-      title: "Lounge Area",
+      title: "Resident Lounge",
       description: "Comfortable common areas for residents to relax and socialize."
     },
     {
       icon: Dumbbell,
       title: "Fitness Center",
-      description: "Well-equipped gym for residents to stay active."
+      description: "State-of-the-art gym for residents to stay active and healthy."
     }
   ];
 
@@ -87,15 +85,15 @@ const HomePage = () => {
       id: 1,
       title: "Community BBQ",
       date: "June 15, 2023",
-      location: "Building Lobby",
-      description: "Join us for a summer barbecue with neighbors and friends."
+      location: "Rooftop Terrace",
+      description: "Join us for a summer barbecue with neighbors and friends. Food, drinks, and fun for all ages!"
     },
     {
       id: 2,
-      title: "Fitness Workshop",
+      title: "Yoga & Wellness Session",
       date: "June 22, 2023",
-      location: "Fitness Center",
-      description: "Learn new workout techniques from our professional trainers."
+      location: "Fitness Studio",
+      description: "Relax and rejuvenate with our weekly yoga and wellness session."
     }
   ];
 
@@ -106,24 +104,37 @@ const HomePage = () => {
       <main className="flex-grow">
         <Hero />
         
+        {/* About Section */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4 text-center max-w-3xl">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">About MTV Condos</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              MTV Condos offers an unparalleled living experience, blending modern design with ultimate comfort. 
+              Located in a prime urban setting, our residences provide easy access to the city's best dining, 
+              entertainment, and cultural attractions. We are committed to fostering a vibrant community 
+              where residents can thrive.
+            </p>
+          </div>
+        </section>
+
         {/* Featured Properties */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Featured Properties</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Discover our premium selection of luxury apartments and condos
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Properties</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Explore our exclusive selection of luxury apartments and condos, each designed with elegance and functionality in mind.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {properties.map(property => (
                 <PropertyCard key={property.id} property={property} />
               ))}
             </div>
             
             <div className="text-center mt-12">
-              <Button asChild variant="outline">
+              <Button asChild className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white text-lg px-8 py-4 rounded-lg">
                 <Link to="/properties">View All Properties</Link>
               </Button>
             </div>
@@ -131,12 +142,12 @@ const HomePage = () => {
         </section>
         
         {/* Amenities */}
-        <section className="py-16">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Amenities</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Enjoy the convenience and luxury of our premium amenities
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Premium Amenities</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Indulge in a lifestyle of convenience and luxury with our thoughtfully curated amenities.
               </p>
             </div>
             
@@ -145,6 +156,11 @@ const HomePage = () => {
                 <FeatureCard key={index} feature={feature} />
               ))}
             </div>
+            <div className="text-center mt-12">
+              <Button asChild variant="outline" className="border-mtv-blue-500 text-mtv-blue-500 hover:bg-mtv-blue-50 hover:text-mtv-blue-600 text-lg px-8 py-4 rounded-lg">
+                <Link to="/amenities">Explore All Amenities</Link>
+              </Button>
+            </div>
           </div>
         </section>
         
@@ -152,9 +168,9 @@ const HomePage = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Upcoming Events</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Join our community for exciting events and activities
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Upcoming Community Events</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Connect with your neighbors and enjoy a vibrant social calendar at MTV Condos.
               </p>
             </div>
             
@@ -165,7 +181,7 @@ const HomePage = () => {
             </div>
             
             <div className="text-center mt-12">
-              <Button asChild>
+              <Button asChild className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white text-lg px-8 py-4 rounded-lg">
                 <Link to="/events">View All Events</Link>
               </Button>
             </div>
@@ -173,37 +189,35 @@ const HomePage = () => {
         </section>
         
         {/* Testimonials */}
-        <section className="py-16">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">What Residents Say</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Hear from our happy residents about their experience
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">What Our Residents Say</h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Hear from our happy residents about their exceptional living experience at MTV Condos.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[1, 2, 3].map((item) => (
-                <Card key={item}>
-                  <CardHeader>
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
-                        <Users className="text-gray-600" size={24} />
+                <Card key={item} className="p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <CardContent className="p-0">
+                    <p className="text-gray-700 text-lg italic mb-6">
+                      "Living at MTV Condos has been an amazing experience. The amenities are fantastic, the location is perfect, and the community truly feels like home. Highly recommend!"
+                    </p>
+                    <div className="flex items-center">
+                      <div className="w-14 h-14 rounded-full bg-gray-200 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Users className="text-gray-600" size={28} />
                       </div>
                       <div>
-                        <CardTitle>Resident {item}</CardTitle>
-                        <div className="flex text-yellow-400">
+                        <CardTitle className="text-xl font-semibold text-gray-800">Resident {item}</CardTitle>
+                        <div className="flex text-yellow-500 mt-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} fill="currentColor" size={16} />
+                            <Star key={i} fill="currentColor" size={18} />
                           ))}
                         </div>
                       </div>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">
-                      "Living at MTV Condos has been an amazing experience. The amenities and community are top-notch."
-                    </p>
                   </CardContent>
                 </Card>
               ))}
