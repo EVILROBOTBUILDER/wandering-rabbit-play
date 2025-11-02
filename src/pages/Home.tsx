@@ -27,30 +27,18 @@ const HomePage = () => {
       id: 1,
       title: "Modern Downtown Apartment",
       location: "Downtown, City",
-      price: "$3,200/month",
-      bedrooms: 2,
-      bathrooms: 2,
-      sqft: 1200,
       image: "https://placehold.co/400x300/e0f2fe/1e306a?text=Modern+Apartment"
     },
     {
       id: 2,
       title: "Luxury Waterfront Condo",
       location: "Waterfront, City",
-      price: "$4,500/month",
-      bedrooms: 3,
-      bathrooms: 3,
-      sqft: 1800,
       image: "https://placehold.co/400x300/bfdbfe/1e306a?text=Waterfront+Condo"
     },
     {
       id: 3,
       title: "Cozy Studio Loft",
       location: "Arts District, City",
-      price: "$2,100/month",
-      bedrooms: 1,
-      bathrooms: 1,
-      sqft: 800,
       image: "https://placehold.co/400x300/93c5fd/1e306a?text=Studio+Loft"
     }
   ];

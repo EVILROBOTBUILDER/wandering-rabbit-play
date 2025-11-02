@@ -15,61 +15,43 @@ const Properties = () => {
       id: 1,
       title: "Modern Downtown Apartment",
       location: "Downtown, City",
-      price: "$3,200/month",
-      bedrooms: 2,
-      bathrooms: 2,
-      sqft: 1200,
-      image: "https://placehold.co/400x300?text=Modern+Apartment"
+      image: "https://placehold.co/400x300?text=Modern+Apartment",
+      description: "A sleek and modern apartment located in the vibrant downtown area, offering stunning city views and contemporary finishes."
     },
     {
       id: 2,
       title: "Luxury Waterfront Condo",
       location: "Waterfront, City",
-      price: "$4,500/month",
-      bedrooms: 3,
-      bathrooms: 3,
-      sqft: 1800,
-      image: "https://placehold.co/400x300?text=Waterfront+Condo"
+      image: "https://placehold.co/400x300?text=Waterfront+Condo",
+      description: "Experience unparalleled luxury in this spacious waterfront condo, featuring panoramic views and exclusive amenities."
     },
     {
       id: 3,
       title: "Cozy Studio Loft",
       location: "Arts District, City",
-      price: "$2,100/month",
-      bedrooms: 1,
-      bathrooms: 1,
-      sqft: 800,
-      image: "https://placehold.co/400x300?text=Studio+Loft"
+      image: "https://placehold.co/400x300?text=Studio+Loft",
+      description: "A charming and efficient studio loft in the heart of the bustling Arts District, perfect for creative individuals."
     },
     {
       id: 4,
       title: "Family Townhouse",
       location: "Suburbs, City",
-      price: "$3,800/month",
-      bedrooms: 4,
-      bathrooms: 3,
-      sqft: 2200,
-      image: "https://placehold.co/400x300?text=Family+Townhouse"
+      image: "https://placehold.co/400x300?text=Family+Townhouse",
+      description: "Spacious townhouse ideal for families, located in a quiet suburban neighborhood with excellent schools and parks."
     },
     {
       id: 5,
       title: "Penthouse Suite",
       location: "Downtown, City",
-      price: "$6,500/month",
-      bedrooms: 3,
-      bathrooms: 4,
-      sqft: 2800,
-      image: "https://placehold.co/400x300?text=Penthouse+Suite"
+      image: "https://placehold.co/400x300?text=Penthouse+Suite",
+      description: "The ultimate in luxury living, this penthouse suite offers expansive living spaces, private terraces, and breathtaking views."
     },
     {
       id: 6,
       title: "Garden Apartment",
       location: "Garden District, City",
-      price: "$2,700/month",
-      bedrooms: 2,
-      bathrooms: 2,
-      sqft: 1400,
-      image: "https://placehold.co/400x300?text=Garden+Apartment"
+      image: "https://placehold.co/400x300?text=Garden+Apartment",
+      description: "A serene garden apartment offering a peaceful retreat with lush greenery and easy access to local cafes."
     }
   ];
 
@@ -80,9 +62,9 @@ const Properties = () => {
       <main className="flex-grow">
         <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Properties</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Listings</h1>
             <p className="text-blue-100 max-w-2xl">
-              Discover our premium selection of luxury apartments and condos designed for comfort and convenience.
+              Discover our premium selection of luxury apartments and condos.
             </p>
           </div>
         </div>
@@ -104,34 +86,7 @@ const Properties = () => {
               </Button>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Bedrooms</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <Button variant="outline" className="w-full">Any</Button>
-                    <Button variant="outline" className="w-full">1+</Button>
-                    <Button variant="outline" className="w-full">2+</Button>
-                    <Button variant="outline" className="w-full">3+</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle>Price Range</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <Button variant="outline" className="w-full">$0 - $3,000</Button>
-                    <Button variant="outline" className="w-full">$3,000 - $5,000</Button>
-                    <Button variant="outline" className="w-full">$5,000+</Button>
-                  </div>
-                </CardContent>
-              </Card>
-              
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Adjusted grid for fewer filter options */}
               <Card>
                 <CardHeader>
                   <CardTitle>Location</CardTitle>
@@ -141,6 +96,8 @@ const Properties = () => {
                     <Button variant="outline" className="w-full">Downtown</Button>
                     <Button variant="outline" className="w-full">Waterfront</Button>
                     <Button variant="outline" className="w-full">Arts District</Button>
+                    <Button variant="outline" className="w-full">Suburbs</Button>
+                    <Button variant="outline" className="w-full">Garden District</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -151,9 +108,9 @@ const Properties = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-2">
-                    <Button variant="outline" className="w-full">Price: Low to High</Button>
-                    <Button variant="outline" className="w-full">Price: High to Low</Button>
                     <Button variant="outline" className="w-full">Newest First</Button>
+                    <Button variant="outline" className="w-full">Oldest First</Button>
+                    <Button variant="outline" className="w-full">Alphabetical</Button>
                   </div>
                 </CardContent>
               </Card>

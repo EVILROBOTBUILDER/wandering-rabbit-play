@@ -8,10 +8,6 @@ interface Property {
   id: number;
   title: string;
   location: string;
-  price: string;
-  bedrooms: number;
-  bathrooms: number;
-  sqft: number;
   image: string;
 }
 
@@ -30,12 +26,6 @@ const PropertyCard = ({ property }: { property: Property }) => {
       </CardHeader>
       <CardContent>
         <p className="text-gray-600 mb-2">{property.location}</p>
-        <p className="text-2xl font-bold text-primary mb-4">{property.price}</p>
-        <div className="flex justify-between text-sm text-gray-500">
-          <span>{property.bedrooms} beds</span>
-          <span>{property.bathrooms} baths</span>
-          <span>{property.sqft} sqft</span>
-        </div>
       </CardContent>
       <CardFooter>
         <Button asChild className="w-full">
