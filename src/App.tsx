@@ -19,44 +19,46 @@ import Governance from "./pages/Governance";
 import EventsAndSurveys from "./pages/EventsAndSurveys";
 import ForSaleOrLease from "./pages/ForSaleOrLease";
 import Gallery from "./pages/Gallery";
-import Signup from "./pages/Signup"; // New import
-
+import Signup from "./pages/Signup";
+import { SessionContextProvider } from "@/providers/SessionContextProvider.tsx"; // Import SessionContextProvider
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/properties" element={<Properties />} />
-          <Route path="/properties/:id" element={<PropertyDetails />} />
-          <Route path="/amenities" element={<Amenities />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/contact" element={<Contact />} />
-          
-          {/* New Navigation Routes */}
-          <Route path="/about-mvt" element={<AboutMVT />} />
-          <Route path="/about-mvt/location-access" element={<AboutMVT />} /> {/* Sub-route example */}
-          <Route path="/about-mvt/amenities" element={<Amenities />} /> {/* Reusing existing Amenities page */}
-          <Route path="/about-mvt/gallery" element={<Gallery />} /> {/* Routing to new Gallery page */}
+      <SessionContextProvider> {/* Wrap the entire application content with SessionContextProvider */}
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/properties" element={<Properties />} />
+            <Route path="/properties/:id" element={<PropertyDetails />} />
+            <Route path="/amenities" element={<Amenities />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/contact" element={<Contact />} />
+            
+            {/* New Navigation Routes */}
+            <Route path="/about-mvt" element={<AboutMVT />} />
+            <Route path="/about-mvt/location-access" element={<AboutMVT />} /> {/* Sub-route example */}
+            <Route path="/about-mvt/amenities" element={<Amenities />} /> {/* Reusing existing Amenities page */}
+            <Route path="/about-mvt/gallery" element={<Gallery />} /> {/* Routing to new Gallery page */}
 
-          <Route path="/residents/login" element={<ResidentsLogin />} />
-          <Route path="/residents/signup" element={<Signup />} /> {/* New Signup Route */}
-          <Route path="/residents/documents" element={<ResidentDocuments />} />
-          <Route path="/residents/service-requests" element={<ServiceRequests />} />
-          <Route path="/residents/announcements" element={<Announcements />} />
+            <Route path="/residents/login" element={<ResidentsLogin />} />
+            <Route path="/residents/signup" element={<Signup />} /> {/* New Signup Route */}
+            <Route path="/residents/documents" element={<ResidentDocuments />} />
+            <Route path="/residents/service-requests" element={<ServiceRequests />} />
+            <Route path="/residents/announcements" element={<Announcements />} />
 
-          <Route path="/governance" element={<Governance />} />
-          <Route path="/governance/board-members" element={<Governance />} /> {/* Sub-route example */}
-          <Route path="/governance/bylaws" element={<ResidentDocuments />} /> {/* Reusing documents page for bylaws */}
-          <Route path="/governance/agm-archive" element={<Governance />} /> {/* Sub-route example */}
+            <Route path="/governance" element={<Governance />} />
+            <Route path="/governance/board-members" element={<Governance />} /> {/* Sub-route example */}
+            <Route path="/governance/bylaws" element={<ResidentDocuments />} /> {/* Reusing documents page for bylaws */}
+            <Route path="/governance/agm-archive" element={<Governance />} /> {/* Sub-route example */}
 
-          <Route path="/events-surveys" element={<EventsAndSurveys />} /> {/* New page for events and surveys */}
-          <Route path="/for-sale-lease" element={<ForSaleOrLease />} />
+            <Route path="/events-surveys" element={<EventsAndSurveys />} /> {/* New page for events and surveys */}
+            <Route path="/for-sale-lease" element={<ForSaleOrLease />} />
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </SessionContextProvider>
     </Router>
   );
 }
