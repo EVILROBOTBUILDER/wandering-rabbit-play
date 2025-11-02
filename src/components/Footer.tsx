@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4 text-white">MTV Condos</h3>
             <p className="mb-4">
-              Luxury living in the heart of the city. Experience comfort, convenience, and community.
+              Luxury living in the heart of Mountain View. Experience comfort, convenience, and community.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" aria-label="Facebook" className="text-gray-300 hover:text-white">
@@ -46,11 +46,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-2 mt-1 text-mtv-blue-300" size={16} />
-                <span>123 Main Street, City, State 12345</span>
+                <span>1000 N. Rengstorff Ave, Mountain View, CA 94043</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 text-mtv-blue-300" size={16} />
-                <span>(123) 456-7890</span>
+                <span>(650) 967-6900</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 text-mtv-blue-300" size={16} />

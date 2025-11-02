@@ -14,45 +14,45 @@ const PropertyDetailsPage = () => {
   const properties = [
     {
       id: 1,
-      title: "Modern Downtown Apartment",
-      location: "Downtown, City",
-      image: "https://placehold.co/400x300?text=Modern+Apartment",
-      description: "A sleek and modern apartment located in the vibrant downtown area, offering stunning city views and contemporary finishes. This unit features an open-concept living space, high-end kitchen appliances, and access to all building amenities including a fitness center and rooftop lounge."
+      title: "Spacious 1-Bedroom Unit",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+101+Interior",
+      description: "A comfortable 1-bedroom unit with modern finishes and ample natural light, perfect for individuals or couples. This unit features an open-concept living space, high-end kitchen appliances, and access to all building amenities including a fitness center and rooftop lounge."
     },
     {
       id: 2,
-      title: "Luxury Waterfront Condo",
-      location: "Waterfront, City",
-      image: "https://placehold.co/400x300?text=Waterfront+Condo",
-      description: "Experience unparalleled luxury in this spacious waterfront condo, featuring panoramic views and exclusive amenities. Enjoy direct access to the boardwalk, a private balcony, and state-of-the-art smart home technology."
+      title: "Modern 2-Bedroom with Balcony",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+203+Balcony",
+      description: "This elegant 2-bedroom unit features a private balcony with city views, a gourmet kitchen, and spacious living areas. Enjoy direct access to the boardwalk, a private balcony, and state-of-the-art smart home technology."
     },
     {
       id: 3,
-      title: "Cozy Studio Loft",
-      location: "Arts District, City",
-      image: "https://placehold.co/400x300?text=Studio+Loft",
-      description: "A charming and efficient studio loft in the heart of the bustling Arts District, perfect for creative individuals. This unit boasts high ceilings, large windows, and is steps away from galleries, cafes, and entertainment venues."
+      title: "Cozy Studio with City View",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+305+Studio",
+      description: "An efficient and stylish studio apartment offering panoramic city views and smart living solutions. This unit boasts high ceilings, large windows, and is steps away from galleries, cafes, and entertainment venues."
     },
     {
       id: 4,
-      title: "Family Townhouse",
-      location: "Suburbs, City",
-      image: "https://placehold.co/400x300?text=Family+Townhouse",
-      description: "Spacious townhouse ideal for families, located in a quiet suburban neighborhood with excellent schools and parks. Features include a private backyard, multiple living areas, and a two-car garage."
+      title: "Large 3-Bedroom Corner Unit",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+402+Corner",
+      description: "Expansive 3-bedroom corner unit with multiple windows, offering a bright and airy living experience for families. Features include a private backyard, multiple living areas, and a two-car garage."
     },
     {
       id: 5,
-      title: "Penthouse Suite",
-      location: "Downtown, City",
-      image: "https://placehold.co/400x300?text=Penthouse+Suite",
-      description: "The ultimate in luxury living, this penthouse suite offers expansive living spaces, private terraces, and breathtaking views. Custom-designed interiors, a gourmet kitchen, and personalized concierge services define this exclusive residence."
+      title: "Penthouse with Private Terrace",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Penthouse+View",
+      description: "The ultimate in luxury, this penthouse boasts a private rooftop terrace, custom interiors, and breathtaking views. Custom-designed interiors, a gourmet kitchen, and personalized concierge services define this exclusive residence."
     },
     {
       id: 6,
-      title: "Garden Apartment",
-      location: "Garden District, City",
-      image: "https://placehold.co/400x300?text=Garden+Apartment",
-      description: "A serene garden apartment offering a peaceful retreat with lush greenery and easy access to local cafes. Enjoy a private patio, ample natural light, and a tranquil setting within a vibrant community."
+      title: "Ground Floor Unit with Patio",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+G01+Patio",
+      description: "A convenient ground-floor unit featuring a private patio, ideal for outdoor relaxation and easy access. Enjoy a private patio, ample natural light, and a tranquil setting within a vibrant community."
     }
   ];
 
@@ -63,10 +63,10 @@ const PropertyDetailsPage = () => {
       <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8 text-center">
-          <h1 className="text-3xl font-bold mb-4">Property Not Found</h1>
-          <p className="text-lg text-gray-600 mb-6">The property you are looking for does not exist.</p>
+          <h1 className="text-3xl font-bold mb-4">Residence Not Found</h1>
+          <p className="text-lg text-gray-600 mb-6">The residence you are looking for does not exist.</p>
           <Button asChild>
-            <Link to="/properties">Back to Listings</Link>
+            <Link to="/properties">Back to Residences</Link>
           </Button>
         </main>
         <Footer />
@@ -80,7 +80,7 @@ const PropertyDetailsPage = () => {
 
       <main className="flex-grow container mx-auto px-4 py-8">
         <Button asChild variant="outline" className="mb-6">
-          <Link to="/properties">&lt; Back to Listings</Link>
+          <Link to="/properties">&lt; Back to Residences</Link>
         </Button>
 
         <PropertyDetails property={property} />

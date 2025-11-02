@@ -13,45 +13,45 @@ const Properties = () => {
   const properties = [
     {
       id: 1,
-      title: "Modern Downtown Apartment",
-      location: "Downtown, City",
-      image: "https://placehold.co/400x300?text=Modern+Apartment",
-      description: "A sleek and modern apartment located in the vibrant downtown area, offering stunning city views and contemporary finishes."
+      title: "Spacious 1-Bedroom Unit",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+101+Interior",
+      description: "A comfortable 1-bedroom unit with modern finishes and ample natural light, perfect for individuals or couples."
     },
     {
       id: 2,
-      title: "Luxury Waterfront Condo",
-      location: "Waterfront, City",
-      image: "https://placehold.co/400x300?text=Waterfront+Condo",
-      description: "Experience unparalleled luxury in this spacious waterfront condo, featuring panoramic views and exclusive amenities."
+      title: "Modern 2-Bedroom with Balcony",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+203+Balcony",
+      description: "This elegant 2-bedroom unit features a private balcony with city views, a gourmet kitchen, and spacious living areas."
     },
     {
       id: 3,
-      title: "Cozy Studio Loft",
-      location: "Arts District, City",
-      image: "https://placehold.co/400x300?text=Studio+Loft",
-      description: "A charming and efficient studio loft in the heart of the bustling Arts District, perfect for creative individuals."
+      title: "Cozy Studio with City View",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+305+Studio",
+      description: "An efficient and stylish studio apartment offering panoramic city views and smart living solutions."
     },
     {
       id: 4,
-      title: "Family Townhouse",
-      location: "Suburbs, City",
-      image: "https://placehold.co/400x300?text=Family+Townhouse",
-      description: "Spacious townhouse ideal for families, located in a quiet suburban neighborhood with excellent schools and parks."
+      title: "Large 3-Bedroom Corner Unit",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+402+Corner",
+      description: "Expansive 3-bedroom corner unit with multiple windows, offering a bright and airy living experience for families."
     },
     {
       id: 5,
-      title: "Penthouse Suite",
-      location: "Downtown, City",
-      image: "https://placehold.co/400x300?text=Penthouse+Suite",
-      description: "The ultimate in luxury living, this penthouse suite offers expansive living spaces, private terraces, and breathtaking views."
+      title: "Penthouse with Private Terrace",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Penthouse+View",
+      description: "The ultimate in luxury, this penthouse boasts a private rooftop terrace, custom interiors, and breathtaking views."
     },
     {
       id: 6,
-      title: "Garden Apartment",
-      location: "Garden District, City",
-      image: "https://placehold.co/400x300?text=Garden+Apartment",
-      description: "A serene garden apartment offering a peaceful retreat with lush greenery and easy access to local cafes."
+      title: "Ground Floor Unit with Patio",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300?text=Unit+G01+Patio",
+      description: "A convenient ground-floor unit featuring a private patio, ideal for outdoor relaxation and easy access."
     }
   ];
 
@@ -62,9 +62,9 @@ const Properties = () => {
       <main className="flex-grow">
         <div className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Listings</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">Our Residences at MTV Condos</h1>
             <p className="text-blue-100 max-w-2xl">
-              Discover our premium selection of luxury apartments and condos.
+              Discover the diverse selection of luxury apartments and condos available within our community.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Properties = () => {
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-3 text-gray-400" size={20} />
                 <Input 
-                  placeholder="Search properties..." 
+                  placeholder="Search residences..." 
                   className="pl-10"
                 />
               </div>
@@ -86,21 +86,8 @@ const Properties = () => {
               </Button>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Adjusted grid for fewer filter options */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Location</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <Button variant="outline" className="w-full">Downtown</Button>
-                    <Button variant="outline" className="w-full">Waterfront</Button>
-                    <Button variant="outline" className="w-full">Arts District</Button>
-                    <Button variant="outline" className="w-full">Suburbs</Button>
-                    <Button variant="outline" className="w-full">Garden District</Button>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-4"> {/* Adjusted grid for fewer filter options */}
+              {/* Removed Location filter as there's only one location */}
               
               <Card>
                 <CardHeader>

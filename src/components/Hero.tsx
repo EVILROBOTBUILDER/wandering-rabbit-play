@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div 
       className="relative bg-cover bg-center text-white py-24 md:py-32" 
-      style={{ backgroundImage: "url('https://placehold.co/1920x1080/2563eb/ffffff?text=Luxury+Condos')" }}
+      style={{ backgroundImage: "url('https://placehold.co/1920x1080/2563eb/ffffff?text=MTV+Condos+Building')" }} // Generic condo building image
     >
       <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for better text readability */}
       <div className="container mx-auto px-4 relative z-10">
@@ -16,7 +16,7 @@ const Hero = () => {
             Experience Luxury Living at MTV Condos
           </h1>
           <p className="text-lg md:text-xl mb-8 text-gray-100">
-            Discover sophisticated residences, unparalleled amenities, and a vibrant community in the heart of the city.
+            Discover sophisticated residences, unparalleled amenities, and a vibrant community in the heart of Mountain View.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button asChild className="bg-mtv-blue-500 hover:bg-mtv-blue-600 text-white text-lg px-8 py-6 rounded-lg">

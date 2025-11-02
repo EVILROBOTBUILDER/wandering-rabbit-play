@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button'; // Added missing import
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
@@ -25,21 +25,21 @@ const Contact = () => {
                 <Phone className="mt-1 h-5 w-5 text-gray-500" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="text-gray-500">+1 (555) 123-4567</p>
+                  <p className="text-gray-500">+1 (650) 967-6900</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <Mail className="mt-1 h-5 w-5 text-gray-500" />
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-gray-500">info@company.com</p>
+                  <p className="text-gray-500">info@mtvcondos.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="mt-1 h-5 w-5 text-gray-500" />
                 <div>
                   <p className="font-medium">Address</p>
-                  <p className="text-gray-500">123 Business Street, Suite 100<br />City, State 12345</p>
+                  <p className="text-gray-500">1000 N. Rengstorff Ave<br />Mountain View, CA 94043</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -83,7 +83,7 @@ const Contact = () => {
                 <Label htmlFor="message">Message</Label>
                 <Textarea id="message" placeholder="Your message here..." rows={4} />
               </div>
-              <Button className="w-full">Send Message</Button> {/* Fixed: Button is now imported */}
+              <Button className="w-full">Send Message</Button>
             </CardContent>
           </Card>
           <Card className="mt-6">
@@ -97,7 +97,7 @@ const Contact = () => {
               <p className="mb-4">
                 Download our comprehensive brochure with all the details about our products and services.
               </p>
-              <Button className="w-full">Download Brochure</Button> {/* Fixed: Button is now imported */}
+              <Button className="w-full">Download Brochure</Button>
             </CardContent>
           </Card>
         </div>

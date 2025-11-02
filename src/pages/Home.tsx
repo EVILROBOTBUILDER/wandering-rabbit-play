@@ -25,21 +25,21 @@ const HomePage = () => {
   const properties = [
     {
       id: 1,
-      title: "Modern Downtown Apartment",
-      location: "Downtown, City",
-      image: "https://placehold.co/400x300/e0f2fe/1e306a?text=Modern+Apartment"
+      title: "Spacious 1-Bedroom Unit",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300/e0f2fe/1e306a?text=Unit+101"
     },
     {
       id: 2,
-      title: "Luxury Waterfront Condo",
-      location: "Waterfront, City",
-      image: "https://placehold.co/400x300/bfdbfe/1e306a?text=Waterfront+Condo"
+      title: "Modern 2-Bedroom with Balcony",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300/bfdbfe/1e306a?text=Unit+203"
     },
     {
       id: 3,
-      title: "Cozy Studio Loft",
-      location: "Arts District, City",
-      image: "https://placehold.co/400x300/93c5fd/1e306a?text=Studio+Loft"
+      title: "Cozy Studio with City View",
+      location: "MTV Condos, Mountain View, CA",
+      image: "https://placehold.co/400x300/93c5fd/1e306a?text=Unit+305"
     }
   ];
 
@@ -98,7 +98,7 @@ const HomePage = () => {
             <h2 className="text-4xl font-bold text-gray-800 mb-6">About MTV Condos</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               MTV Condos offers an unparalleled living experience, blending modern design with ultimate comfort. 
-              Located in a prime urban setting, our residences provide easy access to the city's best dining, 
+              Located in a prime urban setting in Mountain View, our residences provide easy access to the city's best dining, 
               entertainment, and cultural attractions. We are committed to fostering a vibrant community 
               where residents can thrive.
             </p>
@@ -111,7 +111,7 @@ const HomePage = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-800 mb-4">Featured Residences</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Explore our exclusive selection of luxury apartments and condos, each designed with elegance and functionality in mind.
+                Explore a selection of luxury apartments and condos within our building, each designed with elegance and functionality in mind.
               </p>
             </div>
             
