@@ -8,6 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Breadcrumb from "@/components/Breadcrumb"; // Import Breadcrumb
+import Header from "@/components/Header"; // Import Header
+import Footer from "@/components/Footer"; // Import Footer
 
 const Contact = () => {
   return (
