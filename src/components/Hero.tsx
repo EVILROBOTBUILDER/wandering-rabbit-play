@@ -13,12 +13,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black opacity-50"></div> {/* Overlay for better text readability */}
       <div className="container mx-auto px-4 relative z-10 animate-fade-in">
         <div className="max-w-4xl text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-2 leading-tight font-serif">
-            Welcome to Mountain View Condos
-          </h1>
-          <p className="text-xl md:text-2xl mb-6 font-light">
-            Your premier destination for luxury living in the heart of Silicon Valley.
-          </p>
+          {/* Removed h1 and p tags as the image already contains the text */}
           <Button className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-6 py-3 rounded-full shadow-lg transition-all duration-300 ease-in-out group">
             Explore Properties
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
